@@ -102,7 +102,10 @@
                     touchEvent: event
                 })
             }
+         },
+         touchMove() {
+
          }
     }
     docEle.addEventListener("touchstart", Handler.touchStart, false);
-})(window, window.lib || (window.lib = {}))
+})(window, window.SI || (window.SI = {}))

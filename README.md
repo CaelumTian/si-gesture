@@ -1,2 +1,2 @@
-# si-gesture
-移动端手势组件
+si-gesture 移动端手势组件  
+===  

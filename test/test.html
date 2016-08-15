@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+        body * {
+            -webkit-text-size-adjust:none;
+            /*-webkit-user-select: none;*/
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        
+    </div>
+    <script src="../lib/gesture.js"></script>
+    <script>
+        console.log("开始");
+        (function () {
+            var events = ['press', 'dualtouchstart', 'panstart', 'horizontalpanstart', 'verticalpanstart',
+                            'pan', 'verticalpan', 'horizontalpan', 'dualtouch', 'dualtouchend',
+                            'tap', 'doubletap', 'panend', 'flick', 'verticalflick', 'horizontalflick',
+                            'pressend'
+                        ]
+                ;
+            events = ["dualtouchstart", "dualtouch", "dualtouchend"]
+            var srcEl = document.querySelector('.content');
+
+            events.forEach(function(name) {
+                srcEl.addEventListener(name, function(event) {
+                    console.log(name);
+                    var ele = document.createElement("div");
+                    ele.textContent = name;
+                    this.appendChild(ele);
+                }, false);
+            });
+
+            document.body.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+                return false;
+            }, false);
+        })();
+    </script>
+</body>
+</html>

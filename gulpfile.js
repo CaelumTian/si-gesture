@@ -1,5 +1,6 @@
 var gulp = require("gulp"),
     gulpLoadPlugins = require('gulp-load-plugins');
+var Browsersync = require('browser-sync').create();
 const $ =  gulpLoadPlugins();
 
 gulp.task("js", function() {
@@ -14,4 +15,11 @@ gulp.task("es6", function() {
             	presets: ['es2015']
         	}))
         	.pipe(gulp.dest('./build'))
+});
+gulp.task('server', function() {
+    Browsersync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });

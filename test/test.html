@@ -44,6 +44,7 @@
             events.forEach(function(name) {
                 srcEl.addEventListener(name, function(event) {
                     console.log(name);
+                    console.log(event);
                     var ele = document.createElement("div");
                     ele.textContent = name;
                     this.appendChild(ele);

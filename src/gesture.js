@@ -229,7 +229,7 @@
                 }
                 transform = _calcAction(startPosition[0][0], startPosition[0][1], startPosition[1][0], startPosition[1][1], currentPosition[0][0], currentPosition[0][1], currentPosition[1][0], currentPosition[1][1]);
                 //触发双指触摸
-                _fireEvent(_getCommonRootNode(elements[0], elements[1]), "dualtouch", {
+                _fireEvent(_getCommonRootNode(elements[0], elements[1]), "dualtouchmove", {
                     transform: transform,
                     touches: event.touches,
                     touchEvent: event

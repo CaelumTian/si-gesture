@@ -12,9 +12,8 @@
   },
   "keywords": [
     "js",
-    "bridge",
-    "native",
-    "hybird"
+    "gesture",
+    "移动端手势库"
   ],
   "author": "caelumtian",
   "license": "MIT",

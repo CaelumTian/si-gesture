@@ -13,10 +13,10 @@ document.getElementById("aim").addEventListener("tap", function(event) {
 ## 手势事件列表      
 
 |手势事件|说明|触发条件|event对象补充|
-|: |: |:|    
-|tap |轻触 |touchend时检测触发|无|  
-|doubletp|双触摸|300ms内触发两次tap|无|
-|press|长按|tap后500ms后仍没有抬起手指|无|
+|:---:|:---:|:-----:|:---:|        
+|tap     |轻触|touchend时检测触发|无 |    
+|doubletp|双触摸|300ms内触发两次tap|无|  
+|press|长按|tap后500ms后仍没有抬起手指|无|  
 |pressend|长按结束|prees后抬起手指|无|  
 |panstart|平移开始|处于press中且移动距离大于10像素|Boolean isVertical (是否垂直移动)|  
 |pan|平移中|处于press中且移动距离大于10像素|Float distanceX(X轴移动距离);Float distanceY(Y轴移动距离);Boolean isVertical(是否垂直移动)|  
@@ -25,7 +25,8 @@ document.getElementById("aim").addEventListener("tap", function(event) {
 |flick|轻抚|penned时检测合速度大于0.5,触摸时间小于100ms|同panned|
 |verticalflick horizonflick|垂直和水平轻抚|同上|同上|  
 |dualtouchstart|双指触摸开始|两个手指头触摸屏幕触发|Array touched(屏幕上所有触摸点)|  
-|dualtouchmove|双指移动|dualtouchtart移动(旋转，缩放，位移)|Object transform{rotate: 旋转角度, scale: 缩放比例, translate: 移动距离, martix: 变换矩阵};|  
+|dualtouchmove|双指移动|dualtouchtart移动(旋转，缩放，位移)|Object transform{rotate: 旋转角度, scale: 缩放比例, translate: 移动距离, martix: 变换矩阵};|   
+
 
 ### 补充说明  
 1. dualtouch 目前检测的是多指， 但只对两指做计算，返回变换结果。如果两个手指不在同一个元素上，则让两个元素最小的公共父节点触发事件。  

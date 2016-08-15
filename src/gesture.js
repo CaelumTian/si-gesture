@@ -104,22 +104,21 @@
                     status: "tapping",
                     element: event.target,
                     //500ms后如果还处于tapping则触发press手势
-                    pressingHandler: setTimeout(function (event, gesture) {
-                        return tapTest.bind(this, gesture, event);
-                    } (event, this), 500)
+                    pressingHandler: setTimeout(function (element) {
+                        return function() {
+                            if (gesture.status === "tapping") {
+                                gesture.status = "pressing";
+                                _fireEvent(element, 'press', {
+                                    touchEvent: event
+                                })
+                            }
+                            clearTimeout(gesture.pressingHandler);
+                            gesture.pressingHandler = null;
+                        }
+                    } (event.target), 500)
                 }
                 //identifier 手指的唯一标识
                 gestures[touch.identifier] = gesture;
-            }
-            function tapTest(gesture, event) {
-                if (gesture.status === "tapping") {
-                    gesture.status = "pressing";
-                    _fireEvent(event.target, 'press', {
-                        touchEvent: event
-                    })
-                }
-                clearTimeout(gesture.pressingHandler);
-                gesture.pressingHandler = null;
             }
             //如果触摸点为2，则触发dualtouchstart手势，该手势的目标结点为两个触点共同的最小根结点
             if (Object.keys(gestures).length === 2) {

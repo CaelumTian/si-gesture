@@ -18,14 +18,14 @@ document.getElementById("aim").addEventListener("tap", function(event) {
 |doubletp|双触摸|300ms内触发两次tap|无|  
 |press|长按|tap后500ms后仍没有抬起手指|无|  
 |pressend|长按结束|prees后抬起手指|无|  
-|panstart|平移开始|处于press中且移动距离大于10像素|Boolean isVertical (是否垂直移动)|  
-|pan|平移中|处于press中且移动距离大于10像素|Float distanceX(X轴移动距离);Float distanceY(Y轴移动距离);Boolean isVertical(是否垂直移动)|  
+|panstart|平移开始|处于press中且移动距离大于10像素|Boolean `isVertical` (是否垂直移动)|  
+|pan|平移中|处于press中且移动距离大于10像素|Float `distanceX`(X轴移动距离);Float `distanceY`(Y轴移动距离);Boolean `isVertical`(是否垂直移动)|  
 |horizonpan verticalpan|水平和垂直平移|同pan事件|同pan事件，但只有一个方向的距离|  
-|paned|平移结束|手指抬起后|包含pan中结果;Float velocityX(X轴平移速度);Float velocityY(Y轴平移速度);Boolean isflick(是否是flick事件)| 
+|paned|平移结束|手指抬起后|包含pan中结果;Float `velocityX`(X轴平移速度);Float `velocityY`(Y轴平移速度);Boolean `isflick`(是否是flick事件)| 
 |flick|轻抚|penned时检测合速度大于0.5,触摸时间小于100ms|同panned|
 |verticalflick horizonflick|垂直和水平轻抚|同上|同上|  
-|dualtouchstart|双指触摸开始|两个手指头触摸屏幕触发|Array touched(屏幕上所有触摸点)|  
-|dualtouchmove|双指移动|dualtouchtart移动(旋转，缩放，位移)|Object transform{rotate: 旋转角度, scale: 缩放比例, translate: 移动距离, martix: 变换矩阵};|   
+|dualtouchstart|双指触摸开始|两个手指头触摸屏幕触发|Array `touched`(屏幕上所有触摸点)|  
+|dualtouchmove|双指移动|dualtouchtart移动(旋转，缩放，位移)|Object `transform`{rotate: 旋转角度, scale: 缩放比例, translate: 移动距离, martix: 变换矩阵};|   
 
 
 ### 补充说明  

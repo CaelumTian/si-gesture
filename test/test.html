@@ -30,7 +30,6 @@
     </div>
     <script src="../lib/gesture.js"></script>
     <script>
-        console.log("开始");
         (function () {
             var events = ['press', 'dualtouchstart', 'panstart', 'horizontalpanstart', 'verticalpanstart',
                             'pan', 'verticalpan', 'horizontalpan', 'dualtouch', 'dualtouchend',
@@ -43,10 +42,6 @@
             events.forEach(function(name) {
                 srcEl.addEventListener(name, function(event) {
                     console.log(name);
-                    var ele = document.createElement("div");
-                    ele.textContent = name;
-                    var old = this.innerHTML;
-                    this.innerHTML = name + "<br/>" + old;
                 }, false);
             });
 
@@ -56,5 +51,6 @@
             }, false);
         })();
     </script>
+    <script src="./log.js" data-showlog="true"></script>
 </body>
 </html>

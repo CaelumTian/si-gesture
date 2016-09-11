@@ -15,7 +15,7 @@ document.getElementById("aim").addEventListener("tap", function(event) {
 |手势事件|说明|触发条件|event对象补充|
 |:---:|:---:|:-----:|:---:|        
 |tap     |轻触|touchend时检测触发|无 |    
-|doubletp|双触摸|300ms内触发两次tap|无|  
+|doubletap|双触摸|300ms内触发两次tap|无|  
 |press|长按|tap后500ms后仍没有抬起手指|无|  
 |pressend|长按结束|prees后抬起手指|无|  
 |panstart|平移开始|处于press中且移动距离大于10像素|Boolean `isVertical` (是否垂直移动)|  

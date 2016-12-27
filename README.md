@@ -4,7 +4,12 @@ si-gesture 移动端手势组件
 移动端手势库， 提供了多重手势可供选择，进需要添加对应的手势事件名称即可 
 ## 使用方法   
 引入gesture.js文件(注意src中需要ES6支持，lib中不需要支持   
-在任意元素上添加对应的事件
+在任意元素上添加对应的事件  
+
+```html
+<script src="./lib/gesture.min.js"></script>
+```  
+
 ```javascript  
 document.getElementById("aim").addEventListener("tap", function(event) {
     console.log(event);
@@ -36,7 +41,9 @@ document.getElementById("aim").addEventListener("tap", function(event) {
      * scale 缩放: AB到CD长度的变换比例
      * translate位移: A点到C点的横纵坐标位移
      * @params {Number} ABCD四个点的坐标
-     * @return {Object} 返回变换效果  
+     * @return {Object} 返回变换效果    
+
+3. tap 事件不是 click 事件的替代品。所以在浏览器上模拟手机调试的时候，tap 触发有问题(手指移动也会触发该事件)，请切换真机调试。
        
 ## 待更新问题  
 1. 添加更多的手势事件，支持两指以上检测。  
